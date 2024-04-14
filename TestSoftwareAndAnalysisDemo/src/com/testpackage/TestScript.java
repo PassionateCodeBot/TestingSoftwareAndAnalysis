@@ -3,6 +3,10 @@ package com.testpackage;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.Assert;
 import org.testng.annotations.Test;
 
 import com.testcoverage.Task;
@@ -10,40 +14,67 @@ import com.testcoverage.TaskManager;
 
 public class TestScript {
 		
+	
+	
 	@Test
-	public void test1WithEmptyList() {		
+	public void test1WithEmptyList() {	
+		ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outputStreamCaptor));
+		String expectedOutput = "No tasks found.";
 		TaskManager taskManager = new TaskManager();
 		taskManager.displayTasks();
+		Assert.assertEquals(expectedOutput, outputStreamCaptor.toString()
+      	      .trim());
 	}
 
 	@Test
 	public void test2WithValidList() {
+		ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 		TaskManager taskManager = new TaskManager();
+		System.setOut(new PrintStream(outputStreamCaptor));
 		Task task = new Task("Task test", "description test", "2024/01/01", "Low");
+		 
 		taskManager.addTask(task);
+		String expectedOutput = ("Tasks:\r\n"
+        		+ task.toString()).stripTrailing();
 		taskManager.displayTasks();
+		String actualOutput = outputStreamCaptor.toString().stripTrailing();
+        Assert.assertEquals(expectedOutput, actualOutput);
 	}
 
 	@Test
 	public void test3WithIndexLessThanZero() {
+		ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 		TaskManager taskManager = new TaskManager();
+		System.setOut(new PrintStream(outputStreamCaptor));
 		Task task = new Task("Task test", "description test", "2024/01/01", "Low");
 		taskManager.editTask(-1, task);
+		String expectedOutput = "Invalid task index.";
+        String actualOutput = outputStreamCaptor.toString().stripTrailing();
+        Assert.assertEquals(expectedOutput, actualOutput);
 	}
 
 	@Test
 	public void test4WithIndexZero() {
+		ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 		TaskManager taskManager = new TaskManager();
+		System.setOut(new PrintStream(outputStreamCaptor));
 		Task task = new Task("Task test", "description test", "2024/10/10", "Low");
 		taskManager.addTask(task);
 
 		Task taskUpdated = new Task("Task test", "description test", "2024/10/10", "Low");
 		taskManager.editTask(0, taskUpdated);
+		// check task updated
+        String expectedOutput = "Task updated successfully.";
+        String actualOutput = outputStreamCaptor.toString().stripTrailing();
+        Assert.assertEquals(expectedOutput, actualOutput);
 	}
 
 	@Test
 	public void test5WithUpdate() {
+		ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 		TaskManager taskManager = new TaskManager();
+		System.setOut(new PrintStream(outputStreamCaptor));
 		Task task1 = new Task("Task1", "description test", "2024/10/10", "Low");
 		Task task2 = new Task("Task2", "description test", "2024/10/10", "Low");
 
@@ -52,29 +83,46 @@ public class TestScript {
 
 		Task taskUpdated = new Task("Task test", "description test", "2024/10/10", "Low");
 		taskManager.editTask(2, taskUpdated);
+		String expectedOutput = "Invalid task index.";
+        String actualOutput = outputStreamCaptor.toString().stripTrailing();
+        Assert.assertEquals(expectedOutput, actualOutput);
 	}
 
 	@Test
 	public void test6WithIndexLessThanZeroCompleteTask() {
+		ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 		TaskManager taskManager = new TaskManager();
+		System.setOut(new PrintStream(outputStreamCaptor));
 		Task task = new Task("Task test", "description test", "2024/10/10", "Low");
 		taskManager.addTask(task);
 
 		taskManager.markTaskAsComplete(-1);
+		
+		String expectedOutput = "Invalid task index.";
+        String actualOutput = outputStreamCaptor.toString().stripTrailing();
+        Assert.assertEquals(expectedOutput, actualOutput);
 	}
 
 	@Test
 	public void test7WithIndexZeroCompleteTask() {
+		ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 		TaskManager taskManager = new TaskManager();
+		System.setOut(new PrintStream(outputStreamCaptor));
 		Task task = new Task("Task test", "description test", "2024/10/10", "Low");
 		taskManager.addTask(task);
 
 		taskManager.markTaskAsComplete(0);
+		
+		String expectedOutput = "Task marked as complete.";
+        String actualOutput = outputStreamCaptor.toString().stripTrailing();
+        Assert.assertEquals(expectedOutput, actualOutput);
 	}
 
 	@Test
 	public void test8WithValidInvalidCompleteTask() {
+		ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 		TaskManager taskManager = new TaskManager();
+		System.setOut(new PrintStream(outputStreamCaptor));
 		Task task1 = new Task("Task1", "description test", "2024/10/10", "Low");
 		Task task2 = new Task("Task2", "description test", "2024/10/10", "Low");
 
@@ -82,29 +130,46 @@ public class TestScript {
 		taskManager.addTask(task2);
 
 		taskManager.markTaskAsComplete(2);
+		
+		String expectedOutput = "Invalid task index.";
+        String actualOutput = outputStreamCaptor.toString().stripTrailing();
+        Assert.assertEquals(expectedOutput, actualOutput);
 	}
 
 	@Test
 	public void test9WithIndexLessThanZeroDeleteTask() {
+		ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 		TaskManager taskManager = new TaskManager();
+		System.setOut(new PrintStream(outputStreamCaptor));
 		Task task = new Task("Task test", "description test", "2024/10/10", "Low");
 		taskManager.addTask(task);
 
 		taskManager.deleteTask(-1);
+		String expectedOutput = "Invalid task index.";
+        String actualOutput = outputStreamCaptor.toString().stripTrailing();
+        Assert.assertEquals(expectedOutput, actualOutput);
 	}
 
 	@Test
 	public void test10WithIndexZeroDeleteTask() {
+		ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 		TaskManager taskManager = new TaskManager();
+		System.setOut(new PrintStream(outputStreamCaptor));
 		Task task = new Task("Task test", "description test", "2024/10/10", "Low");
 		taskManager.addTask(task);
 
 		taskManager.deleteTask(0);
+		String expectedOutput = "Task deleted successfully.";
+        String actualOutput = outputStreamCaptor.toString().stripTrailing();
+        Assert.assertEquals(expectedOutput, actualOutput);
 	}
 
 	@Test
 	public void test11WithValidInvalidDeleteTask() {
+		ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 		TaskManager taskManager = new TaskManager();
+		System.setOut(new PrintStream(outputStreamCaptor));
+	
 		Task task1 = new Task("Task1", "description test", "2024/10/10", "Low");
 		Task task2 = new Task("Task2", "description test", "2024/10/10", "Low");
 
@@ -112,11 +177,17 @@ public class TestScript {
 		taskManager.addTask(task2);
 
 		taskManager.deleteTask(2);
+		
+		String expectedOutput = "Invalid task index.";
+        String actualOutput = outputStreamCaptor.toString().stripTrailing();
+        Assert.assertEquals(expectedOutput, actualOutput);
 	}
 	
 	@Test
 	public void test12WithUpdateTitle() {
+		ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 		TaskManager taskManager = new TaskManager();
+		System.setOut(new PrintStream(outputStreamCaptor));
 		Task task1 = new Task("Task1", "description test", "2024/10/10", "Low");
 
 		taskManager.addTask(task1);
@@ -125,6 +196,9 @@ public class TestScript {
 
 		Task taskUpdated = new Task("Task test", description + "_new", "2024/10/10", "Low");
 		taskManager.editTask(1, taskUpdated);
+		String expectedOutput = "Invalid task index.";
+        String actualOutput = outputStreamCaptor.toString().stripTrailing();
+        Assert.assertEquals(expectedOutput, actualOutput);
 	}
 
 	@Test

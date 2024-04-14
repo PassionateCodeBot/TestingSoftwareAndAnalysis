@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>18/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>17/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Apr 14 08:07:55 BST 2024</td>
+<td>Started on:</td><td>Sun Apr 14 11:23:04 BST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (651 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (110 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,80 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.testpackage.TestScript_Mutant.test10WithIndexZeroDeleteTask()'><b>test10WithIndexZeroDeleteTask</b><br>Test class: com.testpackage.TestScript_Mutant</td>
+<td><div><pre>org.junit.ComparisonFailure: expected:&lt;[Task deleted successfully].&gt; but was:&lt;[Invalid task index].&gt;
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at com.testpackage.TestScript_Mutant.test10WithIndexZeroDeleteTask(TestScript_Mutant.java:163)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div><a href='#' onClick='toggleBox("stack-trace328827614", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace328827614'><pre>org.junit.ComparisonFailure: expected:&lt;[Task deleted successfully].&gt; but was:&lt;[Invalid task index].&gt;
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at com.testpackage.TestScript_Mutant.test10WithIndexZeroDeleteTask(TestScript_Mutant.java:163)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,95 +149,90 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.testpackage.TestScript.test8WithValidInvalidCompleteTask()'><b>test8WithValidInvalidCompleteTask</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.test11WithValidInvalidDeleteTask()'><b>test11WithValidInvalidDeleteTask</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.test4WithIndexZero()'><b>test4WithIndexZero</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.test6WithIndexLessThanZeroCompleteTask()'><b>test6WithIndexLessThanZeroCompleteTask</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.test5WithUpdate()'><b>test5WithUpdate</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.test1WithEmptyList()'><b>test1WithEmptyList</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.test11WithValidInvalidDeleteTask()'><b>test11WithValidInvalidDeleteTask</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.test2WithValidList()'><b>test2WithValidList</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.test7WithIndexZeroCompleteTask()'><b>test7WithIndexZeroCompleteTask</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.test16WithUpdateCompleted()'><b>test16WithUpdateCompleted</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.testToString2()'><b>testToString2</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.testToString1()'><b>testToString1</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.test9WithIndexLessThanZeroDeleteTask()'><b>test9WithIndexLessThanZeroDeleteTask</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.test8WithValidInvalidCompleteTask()'><b>test8WithValidInvalidCompleteTask</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.test14WithUpdatePriority()'><b>test14WithUpdatePriority</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.test5WithUpdate()'><b>test5WithUpdate</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.test2WithValidList()'><b>test2WithValidList</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.test7WithIndexZeroCompleteTask()'><b>test7WithIndexZeroCompleteTask</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.test16WithUpdateCompleted()'><b>test16WithUpdateCompleted</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.test12WithUpdateTitle()'><b>test12WithUpdateTitle</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.test3WithIndexLessThanZero()'><b>test3WithIndexLessThanZero</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.test14WithUpdatePriority()'><b>test14WithUpdatePriority</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.test6WithIndexLessThanZeroCompleteTask()'><b>test6WithIndexLessThanZeroCompleteTask</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.test15WithUpdateDueDate()'><b>test15WithUpdateDueDate</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.test13WithUpdateTitle()'><b>test13WithUpdateTitle</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.test9WithIndexLessThanZeroDeleteTask()'><b>test9WithIndexLessThanZeroDeleteTask</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.test1WithEmptyList()'><b>test1WithEmptyList</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.testToString2()'><b>testToString2</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.testToString1()'><b>testToString1</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.test3WithIndexLessThanZero()'><b>test3WithIndexLessThanZero</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.test10WithIndexZeroDeleteTask()'><b>test10WithIndexZeroDeleteTask</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.test4WithIndexZero()'><b>test4WithIndexZero</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 <tr>
-<td title='com.testpackage.TestScript.test15WithUpdateDueDate()'><b>test15WithUpdateDueDate</b><br>Test class: com.testpackage.TestScript</td>
+<td title='com.testpackage.TestScript_Mutant.test13WithUpdateTitle()'><b>test13WithUpdateTitle</b><br>Test class: com.testpackage.TestScript_Mutant</td>
 <td></td>
 <td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
-<tr>
-<td title='com.testpackage.TestScript.test12WithUpdateTitle()'><b>test12WithUpdateTitle</b><br>Test class: com.testpackage.TestScript</td>
-<td></td>
-<td>0</td>
-<td>com.testpackage.TestScript@2f058b8a</td></tr>
+<td>com.testpackage.TestScript_Mutant@6f96c77</td></tr>
 </table><p>
 </body>
 </html>
